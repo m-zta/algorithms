@@ -1,5 +1,11 @@
 import random as rnd
 
+# TODO:
+# Find out why the following example fails:
+# List: [16, 35, 46, 48, 49, 51, 55, 56, 58, 59]
+# Key: 37
+# -> Results in invalid bounds error 
+
 
 def get_key():
     key = 0
@@ -45,6 +51,27 @@ def get_random_list(size=10, min=0, max=100):
         result.append(rnd.randint(min, max))
 
     return result
+
+
+def binary_search_iterative(mylist, key, first=None, last=None):
+    """Perform an iterative binary search. Return index of the element in the array if found."""
+
+    # Set default values for first and last
+    if first is None:
+        first = 0
+    if last is None:
+        last = len(mylist) - 1
+
+    while first <= last:
+        m = (first + last) / 2
+        if mylist[m] == key:
+            return m
+        elif mylist[m] < key:
+            first = m + 1
+        else:
+            last = m - 1
+
+    return
 
 
 def binary_search(mylist, key, first=None, last=None):
