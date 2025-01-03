@@ -1,6 +1,21 @@
-venv/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+# Good .gitignore file for a Python project with pycharm
 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyCharm files
+.idea/
+
+# VS Code files
+.vscode/
+
+# venv files
+venv/
+
+# other important files
+*.iml
+*.ipynb_checkpoints/
+*.log
+*.pydevproject
